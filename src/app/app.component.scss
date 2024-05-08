@@ -1,0 +1,72 @@
+@import '../theme/variables.scss';
+
+@keyframes fly {
+    0% {
+      transform:rotate(0) translate(100px) rotate(0);
+    }
+    100% {
+      transform:rotate(1turn) translate(100px) rotate(-1turn);
+    }
+  }
+  
+  @keyframes flyPlus {
+    0% {
+      transform:rotate(0) translate(100px) rotate(0);
+    }
+    100% {
+      transform:rotate(-1turn) translate(100px) rotate(1turn);
+    }
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .wrapper {
+    width: 100vw;
+    height: 100vh;
+    background: #121212;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  .base {
+    position: absolute;
+    filter: blur(60px);
+    opacity: 0.8;
+  }
+  
+  .one {
+    border-radius: 100%;
+    width: 600px;
+    height: 600px;
+    background-color: $primary-color;
+    left: -50px;
+    top: -300px;
+    z-index: 3;
+    animation: fly 20s linear infinite;
+  }
+  
+  .two {
+    width: 500px;
+    height: 800px;
+    background-color: $secondary-color;
+    bottom: -30px;
+    left: -80px;
+  }
+  
+  .three {
+    border-radius: 100%;
+    width: 450px;
+    height: 450px;
+    bottom: -80px;
+    right: -100px;
+    background-color: $tertiary-color;
+    animation: flyPlus 15s linear infinite;
+  }
+  
