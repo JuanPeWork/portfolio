@@ -1,11 +1,24 @@
 <div class="w-full absolute bottom-0 left-0 mb-1">
     <div class="dock">
         @for (app of apps; track app.name) {
-            <div class="app">
-                <a [href]="app.url" target="_blank">
-                    <img [src]="app.img" [alt]="app.name">
-                </a>
-            </div>
+            @if (app.name == 'User') {
+                <div class="app" (click)="showDialog()">
+                    <div>
+                        <img [src]="app.img" [alt]="app.name">
+                    </div>
+                </div>
+            } @else {
+                <div class="app">
+                    <a [href]="app.url" target="_blank">
+                        <img [src]="app.img" [alt]="app.name">
+                    </a>
+                </div>
+            }
+
         }
       </div>
  </div>
+
+<app-window [displayModal]="display" (displayChange)="onDisplayChange($event)"></app-window>
+
+

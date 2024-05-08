@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DockComponent } from "../../components/dock/dock.component";
 import { WindowComponent } from "../../components/window/window.component";
 @Component({

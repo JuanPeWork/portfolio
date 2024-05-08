@@ -1,0 +1,20 @@
+
+<p-dialog [(visible)]="displayModal" class="window" minWidth="500" [style]="{width: '70vw' }"closable="false" resizable="true" (onHide)="hideModalDialog()">
+    <ng-template pTemplate="header">
+        <div class="titlebar">
+            <div class="buttons">
+                <div class="close" (click)="hideModalDialog()">
+                    <a class="closebutton" href="#"><span class="font-bold">×</span></a>
+                </div>
+                <div class="minimize">
+                    <a class="minimizebutton" href="#"><span class="font-bold">–</span></a>
+                </div>
+                <div class="zoom">
+                    <a class="zoombutton" href="#"><span class="font-bold">+</span></a>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    <div class="content"> 
+    </div>
+</p-dialog>
