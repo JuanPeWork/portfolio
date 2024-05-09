@@ -3,13 +3,13 @@
         @for (app of apps; track app.name) {
             @if (app.name == 'User') {
                 <div class="app" (click)="showDialog()">
-                    <div>
+                    <div [pTooltip]="app.name" tooltipPosition='top' positionTop='-15' positionLeft='10' showDelay='500'>
                         <img [src]="app.img" [alt]="app.name">
                     </div>
                 </div>
             } @else {
                 <div class="app">
-                    <a [href]="app.url" target="_blank">
+                    <a [href]="app.url" target="_blank" [pTooltip]="app.name" tooltipPosition='top' positionTop='-15' positionLeft='10' showDelay='500'>
                         <img [src]="app.img" [alt]="app.name">
                     </a>
                 </div>

@@ -18,7 +18,7 @@ export class TopbarComponent {
   items = [
     { id: 1, label: 'Sobre mí', icon: 'pi pi-home' },
     { id: 2, label: 'Proyectos', icon: 'pi pi-search' },
-    { id: 3, label: 'Contactow', icon: 'pi pi-envelope' }
+    { id: 3, label: 'Contacto', icon: 'pi pi-envelope' }
   ];
   
   $currentTime: WritableSignal<Date> = signal(new Date());
