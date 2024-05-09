@@ -1,0 +1,30 @@
+header {
+    transition: all .5s;
+    color: rgb(230, 229, 222);
+
+    .icon {
+        margin-left: 1rem;
+        width: 20px;
+        transition: all .5s;
+    }
+
+    .menu-item {
+        cursor: pointer;
+    }
+
+    &:hover {
+        background-color: rgb(230, 229, 222);
+        color: #121212;
+        svg.icon {
+            path {
+                fill: #121212;
+            }
+        }
+    }
+
+    .clock {
+        text-transform: capitalize;
+        font-weight: 500;
+    }
+}
+
