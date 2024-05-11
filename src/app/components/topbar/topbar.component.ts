@@ -5,7 +5,7 @@ import { distinctUntilChanged, map, takeUntil } from 'rxjs/operators';
 import { AutoDestroyService } from '../../services/utils/auto-destroy.service';
 import { WindowComponent } from "../window/window.component";
 import { MenuModule } from 'primeng/menu'
-import { MenuItem } from 'primeng/api';
+import { MenuItem, SharedModule } from 'primeng/api';
 import { ContactComponent } from "../contact/contact.component";
 
 
@@ -15,7 +15,7 @@ import { ContactComponent } from "../contact/contact.component";
     providers: [AutoDestroyService],
     templateUrl: './topbar.component.html',
     styleUrl: './topbar.component.scss',
-    imports: [DatePipe, WindowComponent, NgClass, MenuModule, ContactComponent]
+    imports: [DatePipe, WindowComponent, NgClass, MenuModule, ContactComponent, SharedModule]
 })
 export class TopbarComponent {
 
@@ -60,6 +60,14 @@ export class TopbarComponent {
 
   onDisplayChange(event: any) {
     this.displayWindow = event;
+  }
+
+  handleModal(id: any) {
+    if(id == '1') {
+      this.displayWindow = true;
+    } else {
+      this.displayContact = true;
+    }
   }
 
 }
