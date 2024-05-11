@@ -14,6 +14,13 @@
     </div>
 
 </header>
-<p-menu #menu [model]="items" [popup]="true" />
+<p-menu #menu  [model]="items" [popup]="true">
+    <ng-template pTemplate="item" let-item>
+        <a pripple="" class="p-ripple p-element p-menuitem-link ng-star-inserted" (click)="handleModal(item.id)">
+            <span class="p-menuitem-text ng-star-inserted">{{item.label}}</span>
+        </a>
+        
+    </ng-template>
+</p-menu>
 <app-window [displayModal]="displayWindow" (displayChange)="onDisplayChange($event)"></app-window>
 <app-contact [displayModal]="displayContact" (displayChange)="onDisplayChangeContact($event)"></app-contact>
