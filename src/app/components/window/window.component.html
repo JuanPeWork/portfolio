@@ -1,5 +1,5 @@
 
-<p-dialog [(visible)]="displayModal" class="window" minWidth="500" [style]="{width: '70vw' }"closable="false" resizable="true" (onHide)="hideModalDialog()">
+<p-dialog [(visible)]="displayModal" class="window" minWidth="500" [style]="{width: '50vw' }"closable="false" resizable="true" (onHide)="hideModalDialog()">
     <ng-template pTemplate="header">
         <div class="titlebar">
             <div class="buttons">
@@ -16,5 +16,21 @@
         </div>
     </ng-template>
     <div class="content"> 
+        <div class="grid">
+            <div class="col-12 header">
+                <div>
+                    <img src="assets/imgs/juanpedro.jpg" class="imgMe" alt="">
+                </div>
+                <div>
+                    <h1>Juan Pedro Adamuz</h1>
+                    <h3>Frontend Developer</h3>
+                </div>
+            </div>
+            <div class="col-12">
+                <h3>Sobre mí</h3>
+                <hr>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit necessitatibus ad rem? Praesentium fugiat, mollitia ea nemo exercitationem eaque ex ad? Mollitia nulla minus vitae natus aliquid ducimus praesentium pariatur.</p>
+            </div>
+        </div>
     </div>
 </p-dialog>

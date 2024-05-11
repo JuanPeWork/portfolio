@@ -146,4 +146,35 @@ span {
 	border: 1px solid rgb(56, 57, 60);
   border-top: 0 !important;
   border-radius: 0 0 6px 6px;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: flex-end;
+    border-radius: 6px;
+    background-image: url('../../../assets/imgs/banner.png');
+    background-size: 100%;
+    background-position: 0;
+    background-repeat: no-repeat;
+    margin-bottom: 5rem;
+    div {
+      padding: 1rem 1rem 0;
+      .imgMe {
+        width: 250px;
+        border-radius: 100%;
+        margin-top: 3rem;
+        margin-bottom: -5rem;
+        border: 3px solid azure;
+      }
+      h1 {
+        margin-bottom: .5rem;
+      }
+      h3 {
+        margin-top: 0;
+      }
+    }
+  }
+
 }
