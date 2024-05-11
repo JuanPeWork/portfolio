@@ -59,5 +59,21 @@ p {
     background: #f1f5f9;
 }
 
-    
+
+.window .p-dialog  {
+    width: 90vw;
+}
+  
+.contact .p-dialog {
+    width: 90vw;
+}
+
+@media screen and (min-width: 768px) {
+    .window  .p-dialog {
+        width: 50vw;
+    }
+    .contact .p-dialog {
+        width: 30vw;
+    }
+}  
 
