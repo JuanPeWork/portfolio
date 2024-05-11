@@ -28,3 +28,14 @@ header {
     }
 }
 
+span:not(.clock){
+    padding: 5px 10px;
+    min-width: 87px;
+    text-align: center;
+    &:hover {
+        font-weight: bold;
+        background-color: #6767672e;
+        border-radius: 5px;
+    }
+}
+

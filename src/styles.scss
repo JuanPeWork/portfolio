@@ -34,3 +34,30 @@ p {
     border-top-color: #4b5563;
 }
 
+.p-menu.p-menu-overlay {
+    background: #ffffff;
+    border: 0 none;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+.p-menu .p-menuitem > .p-menuitem-content {
+    color: #4b5563;
+    transition: box-shadow 0.2s;
+    border-radius: 6px;
+}
+
+.p-menu .p-menuitem > .p-menuitem-content .p-menuitem-link {
+    color: #4b5563;
+    padding: 0.75rem 1.25rem;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.p-menu .p-menuitem:not(.p-highlight):not(.p-disabled) > .p-menuitem-content:hover {
+    color: #334155;
+    background: #f1f5f9;
+}
+
+    
+

@@ -1,16 +1,19 @@
 <header class="w-full absolute top-0">
-    <div class="grid w-full">
-        <div class="col-8 flex flex-row align-items-center justify-content-start">
-            <img src="assets/icons/angular.svg" width="30px" class="mt-1 ml-2 mr-5">
-
-            @for(item of items; track item.id) {
-                <span class="menu-item mr-5" [ngClass]="{'font-bold':( item.id == 1) }">{{ item.label }}</span>    
-            }
+    <div class="grid mt-0 ml-0 w-full">
+        <div class="col-8 hidden md:flex flex-row align-items-center justify-content-start">
+            <img src="assets/imgs/logo.webp" width="35px" class="mt-1 ml-3 mr-5">
+            <span class="menu-item" (click)="showWindow()" [ngClass]="{'font-bold': displayWindow}">Sobre mí</span>    
+            <span class="menu-item" (click)="showContact()">Contacto</span>    
         </div>
-        <div class="col-4 flex flex-row align-items-center justify-content-end">
+        <div class="col-12 md:col-4 flex flex-row align-items-center justify-content-between md:justify-content-end">
             <span class="clock">{{ $currentTime() | date: 'EE d MMM, HH:mm' }}</span>
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#e6e5de" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+            <div (click)="menu.toggle($event)">
+                <svg class="icon block md:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#e6e5de" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+            </div>
         </div>
     </div>
 
 </header>
+<p-menu #menu [model]="items" [popup]="true" />
+<app-window [displayModal]="displayWindow" (displayChange)="onDisplayChange($event)"></app-window>
+<app-contact [displayModal]="displayContact" (displayChange)="onDisplayChangeContact($event)"></app-contact>

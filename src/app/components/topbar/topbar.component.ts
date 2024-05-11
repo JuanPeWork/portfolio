@@ -1,32 +1,34 @@
-import { AsyncPipe, DatePipe, NgClass } from '@angular/common';
+import { DatePipe, NgClass } from '@angular/common';
 import { Component, WritableSignal, signal } from '@angular/core';
 import { timer } from 'rxjs';
 import { distinctUntilChanged, map, takeUntil } from 'rxjs/operators';
 import { AutoDestroyService } from '../../services/utils/auto-destroy.service';
+import { WindowComponent } from "../window/window.component";
+import { MenuModule } from 'primeng/menu'
+import { MenuItem } from 'primeng/api';
+import { ContactComponent } from "../contact/contact.component";
 
 
 @Component({
-  selector: 'app-topbar',
-  standalone: true,
-  imports: [DatePipe, AsyncPipe, NgClass],
-  providers: [AutoDestroyService],
-  templateUrl: './topbar.component.html',
-  styleUrl: './topbar.component.scss'
+    selector: 'app-topbar',
+    standalone: true,
+    providers: [AutoDestroyService],
+    templateUrl: './topbar.component.html',
+    styleUrl: './topbar.component.scss',
+    imports: [DatePipe, WindowComponent, NgClass, MenuModule, ContactComponent]
 })
 export class TopbarComponent {
 
-  items = [
-    { id: 1, label: 'Sobre mí', icon: 'pi pi-home' },
-    { id: 2, label: 'Proyectos', icon: 'pi pi-search' },
-    { id: 3, label: 'Contacto', icon: 'pi pi-envelope' }
+  items: MenuItem[] = [
+    { id: '1', label: 'Sobre mí', icon: 'pi pi-home' },
+    // { id: '2', label: 'Proyectos', icon: 'pi pi-search' },
+    { id: '3', label: 'Contacto', icon: 'pi pi-envelope' }
   ];
-  
+  displayWindow: boolean = false;
+  displayContact: boolean = false;
   $currentTime: WritableSignal<Date> = signal(new Date());
 
-
-    constructor(private readonly destroy$: AutoDestroyService) {
-
-    }
+  constructor(private readonly destroy$: AutoDestroyService) {}
 
 
   ngOnInit(): void {
@@ -34,14 +36,30 @@ export class TopbarComponent {
   }
 
 
- setClock()  {
+  setClock()  {
     return timer(0, 1000)
-    .pipe(
-      map(() => new Date()),
-      map(date => new Date(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes())),
-      distinctUntilChanged((prev, curr) => prev.getTime() === curr.getTime()),
-      takeUntil(this.destroy$)
-    )
- }
+      .pipe(
+        map(() => new Date()),
+        map(date => new Date(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes())),
+        distinctUntilChanged((prev, curr) => prev.getTime() === curr.getTime()),
+        takeUntil(this.destroy$)
+      )
+  }
+
+  showWindow() {
+    this.displayWindow = true;
+  }
+
+  showContact() {
+    this.displayContact = true;
+  }
+
+  onDisplayChangeContact(event: any) {
+    this.displayContact = event;
+  }
+
+  onDisplayChange(event: any) {
+    this.displayWindow = event;
+  }
 
 }
