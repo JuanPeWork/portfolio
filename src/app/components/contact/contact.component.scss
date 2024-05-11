@@ -8,7 +8,7 @@ span {
 	vertical-align: 50%;
 }
 
-.window {
+.contact {
 	background: #18191b;
   max-height: 90vh;
   min-width: 300px !important;
@@ -110,7 +110,7 @@ span {
         background: #00ca56;
         font-size: 9pt;
         line-height: 11px;
-        margin-left: 6px;
+        margin-left: 5px;
         width: 11px;
         height: 11px;
         border: 1px solid #14ae46;
@@ -142,17 +142,24 @@ span {
   height: 100%;
   display: block;
   background: #18191b;
-  padding: 1rem;
+  padding: 2rem 1rem;
     border: 1px solid rgb(56, 57, 60);
   border-top: 0 !important;
   border-radius: 0 0 6px 6px;
-  svg {
-    width: 100px;
-    display: block;
-    margin: 0 auto;
-    path {
-        fill: white;
+  
+    .logo {
+        width: 160px;
+        background-color: #77777747;
+        padding: 1rem 2rem;
+        border-radius: 100% 100%;
+        border: 2px solid white;
+        display: block;
+        margin: 0 auto;
+        img {
+            margin-left: .3rem;
+        }
     }
-  }
-
+    td {
+        font-size: 16px;
+    }
 }
