@@ -12,7 +12,7 @@
 
     .app {
         img {
-            width: 60px;
+            width: 45px;
         }
         display: flex;
         justify-content: center;
@@ -37,4 +37,16 @@ app-window {
 }
 .p-tooltip {
   background-color: red;
+}
+
+@media screen and (min-width: 768px) {
+.dock {
+  min-width: 400px;
+
+  .app {
+    img {
+        width: 60px;
+    }
+  }
+}
 }

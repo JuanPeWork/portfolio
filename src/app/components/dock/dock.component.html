@@ -1,7 +1,7 @@
 <div class="w-full absolute bottom-0 left-0 mb-1">
     <div class="dock">
-        @for (app of apps; track app.name) {
-            @if (app.name == 'User') {
+        @for (app of apps; track app.id) {
+            @if (app.id == 1) {
                 <div class="app" (click)="showDialog()">
                     <div [pTooltip]="app.name" tooltipPosition='top' positionTop='-15' positionLeft='10' showDelay='500'>
                         <img [src]="app.img" [alt]="app.name">
@@ -19,6 +19,6 @@
       </div>
  </div>
 
-<app-window [displayModal]="display" (displayChange)="onDisplayChange($event)"></app-window>
+<app-window [displayModal]="displayWindow" (displayChange)="onDisplayChange($event)"></app-window>
 
 
