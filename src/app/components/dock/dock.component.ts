@@ -18,7 +18,7 @@ export class DockComponent {
     { id: 2, name: 'X', img: 'assets/apps/icon_x.png', url: 'https://twitter.com/JuanPedrovich' },
     { id: 3, name: 'LinkedIn', img: 'assets/apps/icon_linkedin.png', url: 'https://www.linkedin.com/in/jpadamuz/' },
     { id: 4, name: 'Github', img: 'assets/apps/icon_github.png', url: 'https://github.com/JuanPeWork' },
-    { id: 5, name: 'Cv', img: 'assets/apps/icon_cv.png', url: 'assets/docs/curriculum_juanpedro_adamuz.pdf' },
+    { id: 5, name: 'Cv', img: 'assets/apps/icon_cv.png', url: 'assets/docs/curriculum_juanpedro.pdf' },
     { id: 6, name: 'Bulking App', img: 'assets/apps/icon_bulking.png', url: 'https://play.google.com/store/apps/details?id=com.jpadamuz.bulkingapp' },
   ];
 
